@@ -1,0 +1,13 @@
+# Change the word internet to the name of your providers APN
+TIMEOUT 3
+"" ""
+"" AT
+OK AT
+OK ATE0V1
+ABORT "NO CARRIER"
+ABORT "NO DIALTONE"
+ABORT "BUSY"
+ABORT "ERROR"
+OK "AT+CGDCONT=1,\"IP\",\"cmnet\""
+OK "AT+CGATT=1"
+OK "ATDT*99***1#"

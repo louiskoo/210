@@ -1,0 +1,9 @@
+kernel/crypto/ansi_cprng.ko
+kernel/drivers/char/mini210_hello_module.ko
+kernel/drivers/scsi/scsi_wait_scan.ko
+kernel/drivers/input/touchscreen/goodix_touch.ko
+kernel/drivers/input/touchscreen/ft5x06_ts.ko
+kernel/drivers/media/video/tvp5150_tiny210.ko
+kernel/drivers/media/video/ov9650.ko
+kernel/sound/soc/s5pv2xx/snd-soc-wm8960.ko
+kernel/sound/soc/s5pv2xx/snd-soc-mini210-wm8960.ko

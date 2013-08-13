@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#---------------------------------------------- 
+ 
+CONFIGFILE=$1
+SWITCHMODEM=0
+chat -v TIMEOUT 3 -f /etc/ppp/peers/chat-testmodem < /dev/ttyUSB0 > /dev/ttyUSB0
+if [ $? -ne 0 ]; then
+    3g-modem -c $1 -W
+    SWITCHMODEM=1
+else
+    echo ">>> The usb device in modem mode. <<<"
+#   strlen( /etc/3g-modem/xxxx.xxxx.xxxx.xxxx ) = 33
+    if [ ${#CONFIGFILE} -lt "33" ]; then
+    	echo ">>> this modem no target vid and target pid <<<"
+	3g-modem -c $1 -W    	
+	SWITCHMODEM=1
+    fi
+fi
+
+
+#----------------------------------------------
+
+[ ${SWITCHMODEM} -ne 0 ] && sleep 8

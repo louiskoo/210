@@ -1,0 +1,26 @@
+# Ash profile 
+# vim: syntax=sh
+
+# No core files by default
+ulimit -S -c 0 > /dev/null 2>&1
+
+USER="`id -un`"
+LOGNAME=$USER
+PS1='[\u@\h \W]\# '
+PATH=$PATH
+
+HOSTNAME=`/bin/hostname`
+
+LANG=zh_CN.UTF-8
+LC_CTYPE=zh_CN.utf8
+export USER LOGNAME PS1 PATH LANG LC_CTYPE
+
+export TSLIB_TSDEVICE=/dev/input/event0
+export TSLIB_CONFFILE=/etc/ts.conf
+export TSLIB_PLUGINDIR=/usr/lib/ts
+export TSLIB_CALIBFILE=/etc/pointercal
+export TSLIB_FBDEVICE=/dev/fb0
+export QTDIR=/opt/Qtopia
+export QPEDIR=/opt/Qtopia
+export PATH=$QTDIR/bin:$PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:/usr/local/lib:$LD_LIBRARY_PATH

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+export TSLIB_TSDEVICE=/dev/input/event0
+export TSLIB_CONFFILE=/etc/ts.conf
+
+export TSLIB_PLUGINDIR=/usr/lib/ts
+export TSLIB_CALIBFILE=/etc/pointercal
+export TSLIB_FBDEVICE=/dev/fb0
+
+export QWS_DISPLAY=:1
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH:/opt/qte4-arm/lib
+export PATH=/bin:/sbin:/usr/bin/:/usr/sbin:/usr/local/bin
+
+echo "hello world"
+
+if [ -c ${TSLIB_TSDEVICE} ]; then
+	export QWS_MOUSE_PROTO="Tslib:/dev/input/event0 MouseMan:/dev/input/mice"
+	if [ ! -s /etc/pointercal ] ; then
+		rm /etc/pointercal
+		echo "ts calibrate"
+#		echo "54800 -1389 -1438712 -1178,37095 -2654312 65536 800 480" > 
+		/usr/bin/ts_calibrate
+	fi
+else
+	echo "no ts calibrate"
+	export QWS_MOUSE_PROTO="MouseMan:/dev/input/mice"
+fi
+
+export QWS_KEYBOARD=TTY:/dev/tty1
+
+export HOME=/root
+
+#cd /usr/local/Trolltech/QtEmbedded-4.7.0-arm/demos/embedded/fluidlauncher
+#./fluidlauncher -qws
+
+mount /dev/sda1 /udisk
+
+cd /opt/
+./run -qws &
+
+hotplug

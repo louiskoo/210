@@ -1,0 +1,4 @@
+TIMEOUT 3
+ABORT "NO CARRIER"
+"" "\d+++\d\c"
+OK "ATH0"

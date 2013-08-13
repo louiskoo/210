@@ -1,0 +1,16 @@
+#!/bin/sh
+
+base=/usr/sbin/fa_codec_ctrl
+
+# See how we were called.
+case "$1" in
+  start)
+  	modprobe snd-soc-wm8960 2>/dev/null
+  	modprobe snd-soc-mini210-wm8960 2>/dev/null
+	$base mini210
+	;;
+  stop)
+	;;
+esac
+
+exit 0

@@ -1,0 +1,46 @@
+#!/bin/sh
+export TSLIB_TSDEVICE=/dev/input/event0
+export TSLIB_CONFFILE=/etc/ts.conf
+export TSLIB_PLUGINDIR=/usr/lib/ts
+export TSLIB_CALIBFILE=/etc/pointercal
+export QTDIR=/opt/Qtopia4.4.3
+export QPEDIR=/opt/Qtopia4.4.3
+export PATH=$QTDIR/bin:$PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:/usr/local/lib:$LD_LIBRARY_PATH
+if [ -c ${TSLIB_TSDEVICE} ]; then
+        export QWS_MOUSE_PROTO="Tslib:${TSLIB_TSDEVICE}"
+        if [ -e /etc/pointercal -a ! -s /etc/pointercal ] ; then
+                rm /etc/pointercal
+        fi
+else
+        export QWS_MOUSE_PROTO="USB:/dev/input/mice"
+        >/etc/pointercal
+fi
+export QWS_KEYBOARD="TTY:/dev/tty1"
+#export QWS_DISPLAY="Transformed:mmWidth66:mmHeight114:Rot90:0"
+FB_SIZE=$(cat /sys/class/graphics/fb0/virtual_size)
+case "$FB_SIZE" in
+800,480)
+export QWS_DISPLAY="LinuxFb:mmWidth91:mmHeight53:1"
+;;
+480,272)
+export QWS_DISPLAY="LinuxFb:mmWidth76:mmHeight44:1"
+;;
+320,240)
+export QWS_DISPLAY="LinuxFb:mmWidth70:mmHeight52:1"
+;;
+*)
+export QWS_DISPLAY="LinuxFb:mmWidth91:mmHeight53:1"
+;;
+esac
+export LANG="en_US"
+export HOME=/root/Qtopia4Home
+if [ ! -e $HOME ]; then mkdir -p $HOME; fi
+if [ ! -e /usr/share ]; then mkdir /usr/share; fi
+if [ ! -e /usr/share/zoneinfo ]; then ln -s /opt/Qtopia/etc/zoneinfo /usr/share/; fi
+if [ ! -e $HOME/Settings/Trolltech/qpe.conf ]; then
+    mkdir -p $HOME/Settings/Trolltech/
+    cp $QPEDIR/etc/default/Trolltech/qpe.conf $HOME/Settings/Trolltech/qpe.conf -f
+fi
+export QTOPIA_PHONE_DUMMY=1
+exec $QPEDIR/bin/qpe 1>/dev/null 2>/dev/null

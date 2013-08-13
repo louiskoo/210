@@ -1,0 +1,20 @@
+#!/bin/sh
+
+THEFILE=libhdmiservice_jni.so
+THEPATH=/system/lib
+
+IP=192.168.1.61
+USER=plg
+PASS=plg
+
+rm $THEFILE
+ftp -i -in <<!
+open $IP 21
+user $USER $PASS
+bin
+get $THEFILE
+bye
+!
+rm $THEPATH/$THEFILE
+cp $THEFILE $THEPATH/
+md5sum $THEPATH/$THEFILE

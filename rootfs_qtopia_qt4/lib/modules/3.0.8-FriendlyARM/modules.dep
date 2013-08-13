@@ -1,0 +1,36 @@
+kernel/crypto/ansi_cprng.ko:
+kernel/drivers/char/mini210_hello_module.ko:
+kernel/drivers/scsi/scsi_wait_scan.ko:
+kernel/drivers/input/touchscreen/goodix_touch.ko:
+kernel/drivers/input/touchscreen/ft5x06_ts.ko:
+kernel/drivers/media/video/tvp5150_tiny210.ko:
+kernel/drivers/media/video/ov9650.ko:
+kernel/drivers/media/video/gspca/gspca_main.ko:
+kernel/sound/soc/s5pv2xx/snd-soc-wm8960.ko:
+kernel/sound/soc/s5pv2xx/snd-soc-mini210-wm8960.ko:
+3rdparty/net/wireless/lib80211_crypt_ccmp.ko: 3rdparty/net/wireless/lib80211.ko 3rdparty/compat/compat.ko
+3rdparty/net/wireless/lib80211_crypt_wep.ko: 3rdparty/net/wireless/lib80211.ko 3rdparty/compat/compat.ko
+3rdparty/net/wireless/lib80211.ko: 3rdparty/compat/compat.ko
+3rdparty/net/wireless/cfg80211.ko: 3rdparty/compat/compat.ko
+3rdparty/net/wireless/lib80211_crypt_tkip.ko: 3rdparty/net/wireless/lib80211.ko 3rdparty/compat/compat.ko
+3rdparty/net/mac80211/mac80211.ko: 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas/libertas.ko: 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas/usb8xxx.ko: 3rdparty/drivers/net/wireless/libertas/libertas.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas/libertas_spi.ko: 3rdparty/drivers/net/wireless/libertas/libertas.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas/libertas_sdio.ko: 3rdparty/drivers/net/wireless/libertas/libertas.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt2x00usb.ko: 3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt73usb.ko: 3rdparty/drivers/net/wireless/rt2x00/rt2x00usb.ko 3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt2800lib.ko: 3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt2800usb.ko: 3rdparty/drivers/net/wireless/rt2x00/rt2800lib.ko 3rdparty/drivers/net/wireless/rt2x00/rt2x00usb.ko 3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt2500usb.ko: 3rdparty/drivers/net/wireless/rt2x00/rt2x00usb.ko 3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/rt2x00/rt2x00lib.ko: 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/zd1211rw/zd1211rw.ko: 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/ath/ath.ko: 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/ath/ath9k/ath9k_htc.ko: 3rdparty/net/mac80211/mac80211.ko 3rdparty/drivers/net/wireless/ath/ath9k/ath9k_common.ko 3rdparty/drivers/net/wireless/ath/ath9k/ath9k_hw.ko 3rdparty/drivers/net/wireless/ath/ath.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/ath/ath9k/ath9k.ko: 3rdparty/net/mac80211/mac80211.ko 3rdparty/drivers/net/wireless/ath/ath9k/ath9k_common.ko 3rdparty/drivers/net/wireless/ath/ath9k/ath9k_hw.ko 3rdparty/drivers/net/wireless/ath/ath.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/ath/ath9k/ath9k_hw.ko: 3rdparty/drivers/net/wireless/ath/ath.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/ath/ath9k/ath9k_common.ko: 3rdparty/drivers/net/wireless/ath/ath9k/ath9k_hw.ko 3rdparty/drivers/net/wireless/ath/ath.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas_tf/libertas_tf_usb.ko: 3rdparty/drivers/net/wireless/libertas_tf/libertas_tf.ko 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/drivers/net/wireless/libertas_tf/libertas_tf.ko: 3rdparty/net/mac80211/mac80211.ko 3rdparty/net/wireless/cfg80211.ko 3rdparty/compat/compat.ko
+3rdparty/compat/compat.ko:
+extra/rtl8192cu.ko:
